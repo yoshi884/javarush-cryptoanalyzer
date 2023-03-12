@@ -41,6 +41,32 @@ public class Temp {
         }
     }
 
+
+    public void fileDecryption(BufferedWriter writer , int key , int ch){
+
+        try {
+
+            for (int i = 0; i < ALPHABET.length; i++) {
+                if(ALPHABET[i] == (char) ch){
+                    int total = i  - key;
+                    if(total <0){
+                        writer.write(keyAdjustmentDecryption(key , ABCLENGTH) );
+                        break;
+                    }
+
+                    char newChar =ALPHABET[i - key];
+                    writer.write(newChar);
+                }
+            }
+
+
+        }catch (Exception e){
+            System.out.println("Something went wrong :(");
+            e.printStackTrace();
+        }
+    }
+
+
     public char keyAdjustment(int key , int arrayLength){
         int diff = key - arrayLength;
 
@@ -50,6 +76,17 @@ public class Temp {
         Collections.rotate(list , diff);
 
         return list.get(key);
+    }
+
+    public char keyAdjustmentDecryption(int key , int arrayLength){
+        int diff = key - arrayLength;
+
+        ArrayList <Character> list = new ArrayList(Arrays.asList(ALPHABET));
+
+
+        Collections.rotate(list , diff);
+
+        return list.get(0);
     }
 
 }
