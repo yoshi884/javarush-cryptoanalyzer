@@ -8,7 +8,7 @@ import java.util.Collections;
 public class Temp {
 
 
-    private static final Character[] ALPHABET = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
+    private static final Character[] ALPHABET = { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
             'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
             'ъ', 'ы', 'ь', 'э', 'ю', 'я', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З',
             'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ',
@@ -23,17 +23,22 @@ public class Temp {
     public  void fileEncryption(BufferedWriter writer , int key , int ch) {
 
         try {
-            for (int i = 0; i < ALPHABET.length; i++) {
+            for (int i = 0; i < ABCLENGTH; i++) {
                 if(ALPHABET[i] == (char) ch){
                     int total = i  + key;
                     if(total >= ABCLENGTH){
-                        writer.write(keyAdjustment(key , ABCLENGTH));
+                        writer.write(keyAdjustment(total));
+                        System.out.println(ALPHABET[i] + "--->" + keyAdjustment(total));
                         break;
                     }
 
                     char newChar =ALPHABET[i + key];
                     writer.write(newChar);
-                }
+                    System.out.println(ALPHABET[i] + "--->" + newChar);
+                    break;
+                } /*else if (i == ABCLENGTH -1){
+                    System.out.println("Not found ! :" + ch);
+                }*/
             }
         }catch (Exception e){
             System.out.println("Something went wrong :(");
@@ -44,18 +49,20 @@ public class Temp {
 
     public void fileDecryption(BufferedWriter writer , int key , int ch){
 
+
         try {
 
             for (int i = 0; i < ALPHABET.length; i++) {
                 if(ALPHABET[i] == (char) ch){
                     int total = i  - key;
                     if(total <0){
-                        writer.write(keyAdjustmentDecryption(key , ABCLENGTH) );
+                        writer.write(keyAdjustment(total) );
                         break;
                     }
 
                     char newChar =ALPHABET[i - key];
                     writer.write(newChar);
+                    break;
                 }
             }
 
@@ -67,26 +74,17 @@ public class Temp {
     }
 
 
-    public char keyAdjustment(int key , int arrayLength){
-        int diff = key - arrayLength;
+    public char keyAdjustment(int key ){
+
 
         ArrayList <Character> list = new ArrayList(Arrays.asList(ALPHABET));
 
 
-        Collections.rotate(list , diff);
+        Collections.rotate(list , -key );
 
-        return list.get(key);
-    }
-
-    public char keyAdjustmentDecryption(int key , int arrayLength){
-        int diff = key - arrayLength;
-
-        ArrayList <Character> list = new ArrayList(Arrays.asList(ALPHABET));
-
-
-        Collections.rotate(list , diff);
 
         return list.get(0);
     }
+
 
 }
