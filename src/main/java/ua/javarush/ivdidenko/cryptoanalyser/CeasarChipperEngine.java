@@ -35,7 +35,6 @@ public class CeasarChipperEngine {
         }
         return result;
     }
-
     private char keyAdjustment(int key) {
         ArrayList<Character> list = new ArrayList(Arrays.asList(ALPHABET));
 
