@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class Dialog {
 
-    private  static  final  String DEFAULT_SOURCE_FOR_ENCRYPT = "src/main/target/originalText.txt";
-    private  static  final  String DEFAULT_SOURCE_FOR_DECRYPT = "src/main/target/encodedText.txt";
-    private  static  final  String DEFAULT_TARGET_FOR_ENCRYPT = "src/main/target/encodedText.txt";
-    private  static  final  String DEFAULT_TARGET_FOR_DECRYPT = "src/main/target/textAfterDecryption.txt";
-    private static final String DEFAULT_TARGET_FOR_BRUTEFOERCE = "src/main/target/textAfterBroutForce.txt";
+    private  static  final  String DEFAULT_SOURCE_FOR_ENCRYPT = "src/main/java/target/originalText.txt";
+    private  static  final  String DEFAULT_SOURCE_FOR_DECRYPT = "src/main/java/target/encodedText.txt";
+    private  static  final  String DEFAULT_TARGET_FOR_ENCRYPT = "src/main/java/target/encodedText.txt";
+    private  static  final  String DEFAULT_TARGET_FOR_DECRYPT = "src/main/java/target/textAfterDecryption.txt";
+    private static final String DEFAULT_TARGET_FOR_BRUTEFOERCE = "src/main/java/target/textAfterBroutForce.txt";
     private static final String QUESTION_KEY = "Key?: ";
     private static final String QUESTION_SOURCE = "Source?: ";
     private static final String QUESTION_TARGET = "Target?: ";
