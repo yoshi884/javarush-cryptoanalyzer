@@ -5,6 +5,7 @@ import ua.javarush.ivdidenko.cryptoanalyser.exception.FileException;
 import java.io.*;
 
 public class CeasarCipher {
+
     private CeasarChipperEngine ceasarChipperEngine;
 
     private String source;
@@ -51,7 +52,6 @@ public class CeasarCipher {
             while ((currentChar = reader.read()) != -1) {
                 char newChar = ceasarChipperEngine.newSymbol(key, currentChar);
                 writer.write(newChar);
-
             }
 
             System.out.println("Done!");
@@ -72,10 +72,10 @@ public class CeasarCipher {
                  BufferedWriter writer = new BufferedWriter(new FileWriter(getTarget()))
 
             ) {
-                int total = kurwa(reader, writer, -j);
+                int total = decryptAttemp(reader, writer, -j); // Variable that contains number of symbols in whole file.
 
-                if (total / 12 < countMatches()) {
-                    System.out.println(j);
+                if (total / 12 < countMatches()) { //Most average word in russian language contains 6 letters.
+                    System.out.println(j);              /*Divides by 12 just to don't be so strict.*/
                     break;
                 }
 
@@ -105,7 +105,7 @@ public class CeasarCipher {
         return matches;
     }
 
-    private int kurwa(BufferedReader reader, BufferedWriter writer, int key) throws IOException {
+    private int decryptAttemp(BufferedReader reader, BufferedWriter writer, int key) throws IOException {
         int i = 0;
         int currentChar;
 

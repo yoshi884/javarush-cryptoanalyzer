@@ -3,6 +3,7 @@ package ua.javarush.ivdidenko.cryptoanalyser;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class CeasarChipperEngine {
 
@@ -19,6 +20,8 @@ public class CeasarChipperEngine {
 
     private final int ABCLENGTH = ALPHABET.length;
 
+    HashMap<Character , Character> encryptedAlphabet = new HashMap<>();
+
     public int getABCLENGTH() {
         return ABCLENGTH;
     }
@@ -27,19 +30,28 @@ public class CeasarChipperEngine {
         char result = 0;
         for (int i = 0; i < ABCLENGTH; i++) {
             if (ALPHABET[i] == ch) {
+                if(encryptedAlphabet.containsKey((char) ch)){
+                    return encryptedAlphabet.get((char) ch);
+                    /*It's no need to everytime call a keyAdjustment method. No meter how fast it works.
+                     I just decided to create an encryptedAlphabet. Some kind of optimization. */
+
+                }
                 int total = i + key;
 
                 result = keyAdjustment(total);
+                encryptedAlphabet.put((char) ch ,result);
                 break;
             }
         }
         return result;
     }
     private char keyAdjustment(int key) {
+       /* A method which  rotates an Arraylist and return encoded symbol.
+        It's works very fast and can handle with keys like 99999 , 0 or even -9999  */
         ArrayList<Character> list = new ArrayList(Arrays.asList(ALPHABET));
 
         Collections.rotate(list, -key);
 
-        return list.get(0);
+        return list.get(0); // Encoded symbol always will have a 0 index in ArrayList
     }
 }
