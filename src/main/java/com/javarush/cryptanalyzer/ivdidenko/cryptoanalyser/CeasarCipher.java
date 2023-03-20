@@ -1,6 +1,6 @@
-package ua.javarush.ivdidenko.cryptoanalyser;
+package com.javarush.cryptanalyzer.ivdidenko.cryptoanalyser;
 
-import ua.javarush.ivdidenko.cryptoanalyser.exception.FileException;
+import com.javarush.cryptanalyzer.ivdidenko.cryptoanalyser.exception.FileException;
 
 import java.io.*;
 
@@ -75,7 +75,7 @@ public class CeasarCipher {
                 int total = decryptAttemp(reader, writer, -j); // Variable that contains number of symbols in whole file.
 
                 if (total / 12 < countMatches()) { //Most average word in russian language contains 6 letters.
-                    System.out.println(j);              /*Divides by 12 just to don't be so strict.*/
+                    System.out.println("Найденный ключ:" + j);              /*Divides by 12 just to don't be so strict.*/
                     break;
                 }
 

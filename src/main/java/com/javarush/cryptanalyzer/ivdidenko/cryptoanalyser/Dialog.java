@@ -1,4 +1,4 @@
-package ua.javarush.ivdidenko.cryptoanalyser;
+package com.javarush.cryptanalyzer.ivdidenko.cryptoanalyser;
 
 import java.io.File;
 import java.util.Scanner;

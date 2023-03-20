@@ -1,4 +1,4 @@
-package ua.javarush.ivdidenko.cryptoanalyser;
+package com.javarush.cryptanalyzer.ivdidenko.cryptoanalyser;
 
 import java.util.ArrayList;
 import java.util.Arrays;

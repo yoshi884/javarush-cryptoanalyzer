@@ -1,4 +1,4 @@
-package ua.javarush.ivdidenko.cryptoanalyser.exception;
+package com.javarush.cryptanalyzer.ivdidenko.cryptoanalyser.exception;
 
 import java.io.FileNotFoundException;
 
