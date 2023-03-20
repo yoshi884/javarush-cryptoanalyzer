@@ -11,9 +11,9 @@ public class Dialog {
     private  static  final  String DEFAULT_TARGET_FOR_DECRYPT = "src/main/java/target/textAfterDecryption.txt";
     private static final String DEFAULT_TARGET_FOR_BRUTEFOERCE = "src/main/java/target/textAfterBroutForce.txt";
     private static final String QUESTION_KEY = "Key?: ";
-    private static final String QUESTION_SOURCE = "Source?: ";
+    private static final String QUESTION_SOURCE = "Указанный путь должен быть абсолютным. Или нажмите Enter для значения по умолчанию. \nSource?:";
     private static final String QUESTION_TARGET = "Target?: ";
-    private static final String START_MESSAGE = "Что делаем?:\n 1 - FromFileToFileEncryption\n 2 - FromFileToFileDecryption\n 3 - BrutForce";
+    private static final String START_MESSAGE = "Выберите ти операции :\n 1 - FromFileToFileEncryption\n 2 - FromFileToFileDecryption\n 3 - BrutForce ";
     private static final String SCANNER_EXCEPTION_MESSAGE = "Incorrect input! : ";
 
 

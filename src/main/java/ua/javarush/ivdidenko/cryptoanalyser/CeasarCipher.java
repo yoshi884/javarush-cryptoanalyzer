@@ -114,6 +114,7 @@ public class CeasarCipher {
             writer.write(newChar);
             i++;
         }
+        ceasarChipperEngine.encryptedAlphabet.clear(); // Clearing alphabet for current key
         return i;
     }
 }
