@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class Dialog {
 
-    private  static  final  String DEFAULT_SOURCE_FOR_ENCRYPT = "src/main/java/target/originalText.txt";
-    private  static  final  String DEFAULT_SOURCE_FOR_DECRYPT = "src/main/java/target/encodedText.txt";
-    private  static  final  String DEFAULT_TARGET_FOR_ENCRYPT = "src/main/java/target/encodedText.txt";
-    private  static  final  String DEFAULT_TARGET_FOR_DECRYPT = "src/main/java/target/textAfterDecryption.txt";
-    private static final String DEFAULT_TARGET_FOR_BRUTEFOERCE = "src/main/java/target/textAfterBroutForce.txt";
+    private  static  final  String DEFAULT_SOURCE_FOR_ENCRYPT = "target/input.txt";
+    private  static  final  String DEFAULT_SOURCE_FOR_DECRYPT = "target/encoded.txt";
+    private  static  final  String DEFAULT_TARGET_FOR_ENCRYPT = "target/encoded.txt";
+    private  static  final  String DEFAULT_TARGET_FOR_DECRYPT = "target/output.txt";
+    private static final String DEFAULT_TARGET_FOR_BRUTEFOERCE = "target/output.txt";
     private static final String QUESTION_KEY = "Key?: ";
     private static final String QUESTION_SOURCE = "Указанный путь должен быть абсолютным. Или нажмите Enter для значения по умолчанию. \nSource?:";
     private static final String QUESTION_TARGET = "Target?: ";
-    private static final String START_MESSAGE = "Выберите ти операции :\n 1 - FromFileToFileEncryption\n 2 - FromFileToFileDecryption\n 3 - BrutForce ";
+    private static final String START_MESSAGE = "Выберите тип операции :\n 1 - FromFileToFileEncryption\n 2 - FromFileToFileDecryption\n 3 - BrutForce ";
     private static final String SCANNER_EXCEPTION_MESSAGE = "Incorrect input! : ";
 
 
